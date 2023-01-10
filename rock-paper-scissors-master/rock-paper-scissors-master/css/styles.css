@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:600,700&display=swap");
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+
+:root{
+    --dark-text: hsl(229, 25%, 31%);
+    --score-text: hsl(229, 64%, 46%);
+    --header: hsl(217, 16%, 45%);
+    --light-text: #ffffff;
+    --bg-grad-1: hsl(214, 47%, 23%);
+    --bg-grad-2: hsl(237, 49%, 15%);
+    --scissors-1:  hsl(39, 89%, 49%);
+    --scissors-2:  hsl(40, 84%, 53%);
+    --rock-1: hsl(349, 71%, 52%);
+    --rock-2:  hsl(349, 70%, 56%);
+    --paper-1:  hsl(230, 89%, 62%);
+    --paper-2: hsl(230, 89%, 65%);
+    --lizard:  hsl(261, 73%, 60%);
+    --lizard-2: hsl(261, 72%, 63%);
+    --cyan-1:  hsl(189, 59%, 53%);
+    --cyan-2: hsl(189, 58%, 57%);
+
+}
+
+
+body{
+    font-family: "Barlow Semi Condensed", sans-serif;
+    background: radial-gradient(at top,var(--bg-grad-1),var(--bg-grad-2));
+    /* padding: 1.2rem 2rem; */
+    min-height: 100vh;
+    text-transform: uppercase;
+}
+.scoreboard{
+    position: relative;
+    max-width: 650px;
+    margin: 30px auto;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    border-radius: 1.5rem;
+    border: 2px solid var(--header);
+    padding: 1rem 2rem;
+}
+.title{
+    height: 100%;
+}
+.score-box{
+    display:flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 120px;
+    border-radius: 12px;
+    line-height: 1;
+}
+.score_title{
+    color: var(--score-text);
+    letter-spacing: 0.2rem;
+    font-size: 1.1rem;
+   
+}
+.score_number{
+    font-size: 2rem;
+    color: var(--dark-text);
+    font-weight: 750;
+}
+ /* choices game */
+.game-proper{
+    position: relative;
+    display: grid;
+    grid-template-columns: (repeat(2,1fr));
+    grid-template-areas:"paper scissors" "rock rock";
+    place-items: center;
+    height: 38rem; 
+    padding: auto;
+}
+.choice[data-choice="paper"]{
+    grid-area: paper;
+}
+.choice[data-choice="rock"]{
+    grid-area: rock;
+}
+.choice[data-choice="scissors"]{
+    grid-area: scissors;
+}
+.choice{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+.btn{
+    position: relative;
+    background: white;
+    border-radius: 50%;
+    height: 9.5rem;
+    width: 9.5rem;
+    display: grid;
+    place-items: center;
+}
+
